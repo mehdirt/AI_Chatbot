@@ -1,5 +1,8 @@
+from AI_Chatbot import style
+
 import reflex as rx
 from rxconfig import config
+
 
 
 # filename = f"{config.app_name}/{config.app_name}.py"
@@ -11,8 +14,14 @@ class State(rx.State):
 
 def qa(question: str, answer: str) -> rx.Component:
     return rx.box(
-        rx.box(question, text_align="right"),
-        rx.box(answer, text_align="left"),
+        rx.box(
+            question, style=style.question_style,
+            text_align="right",
+            ),
+        rx.box(
+            answer, style=style.answer_style,
+            text_align="left",
+            ),
         margin_y='1em',
     )
 
@@ -28,17 +37,20 @@ def chat() -> rx.Component:
         ),
     ]
     return rx.box(
-        *[
-            qa(question, answer) 
-            for question, answer in qa_pairs
-        ]
+        *[qa(question, answer) for question, answer in qa_pairs]
     )
 
 
 def action_bar() -> rx.Component:
     return rx.hstack(
-        rx.chakra.input(placeholder="Ask a question"),
-        rx.button("Ask"),
+        rx.chakra.input(
+            placeholder="Ask a question",
+            style=style.input_style
+        ),
+        rx.button(
+            "Ask",
+            style=style.button_style,
+        ),
     )
 
 def index() -> rx.Component:
