@@ -1,9 +1,8 @@
+import reflex as rx
 from rxconfig import config
 
-import reflex as rx
 
-
-filename = f"{config.app_name}/{config.app_name}.py"
+# filename = f"{config.app_name}/{config.app_name}.py"
 
 
 class State(rx.State):
