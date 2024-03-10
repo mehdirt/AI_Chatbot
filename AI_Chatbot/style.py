@@ -7,7 +7,7 @@ message_style = dict(
     margin_y="0.5em",
     box_shadow=shadow,
     max_width="30em",
-    display="inline-block"
+    display="inline-block",
 )
 
 # Set specific style for questions and answers
