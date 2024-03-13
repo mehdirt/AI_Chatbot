@@ -1,11 +1,6 @@
 from AI_Chatbot import style
 from AI_Chatbot.state import State
 import reflex as rx
-from rxconfig import config
-
-
-
-# filename = f"{config.app_name}/{config.app_name}.py"
 
 def qa(question: str, answer: str) -> rx.Component:
     return rx.box(
